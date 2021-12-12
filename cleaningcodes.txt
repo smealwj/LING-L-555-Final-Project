@@ -1,0 +1,9 @@
+The following codes were used to "clean" the corpora.
+By clean, I mean the removal of Latin characters not intentionally written by the user. 
+This includes retweets automatically reiterating another user's username as well as https links included in tweets.
+
+This Linux code was used to remove usernames from the corpora:
+sed -e 's/@[^[:space:]]*//g'
+
+This Linux code was used to remove https hyperlinks from the corpora:
+sed -e 's!https\{0,1\}://[^[:space:]]*!!g' filename.txt
